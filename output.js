@@ -1,4 +1,4 @@
-//Fri Jun 06 2025 08:31:12 GMT+0000 (Coordinated Universal Time)
+//Fri Jun 06 2025 08:32:17 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
 var _0xod2 = "jsjiami.com.v6";
@@ -254,744 +254,6 @@ function getQmExpireDate(_0x151956, _0x3754e2) {
   }
 }
 _0xod2 = "jsjiami.com.v6";
-const $ = new Env("领取优惠券");
-const nowVersion = "20250520";
-console.log("当前版本" + nowVersion);
-const cron = require("node-cron");
-const fs = require("fs");
-const path = require("path");
-const util = require("util");
-const {
-  JSDOM
-} = require("jsdom");
-const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>", {
-  url: "https://www.jd.com"
-});
-const window = dom.window;
-const document = window.document;
-window.HTMLCanvasElement.prototype.getContext = function () {
-  return {
-    fillRect: () => {},
-    clearRect: () => {},
-    getImageData: () => ({
-      data: []
-    }),
-    putImageData: () => {}
-  };
-};
-global.window = window;
-global.document = document;
-global.Element = window.Element;
-const configPath = path.join(__dirname, "config.json");
-const smashUtils = require("./jdJm.js").smashUtils;
-const ParamsSignLite = require("./jdJm2.js");
-$.CryptoJS = require("crypto-js");
-let apiList = require("./jdYhqApiList.js").apiList;
-const USER_AGENTS = ["jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A5010 Build/QKQ1.191014.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;9;network/4g;Mozilla/5.0 (Linux; Android 9; Mi Note 3 Build/PKQ1.181007.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; GM1910 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;android;10.1.0;9;network/wifi;Mozilla/5.0 (Linux; Android 9; 16T Build/PKQ1.190616.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;13.6;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.6;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.5;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.7;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.4;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;9;network/wifi;Mozilla/5.0 (Linux; Android 9; MI 6 Build/PKQ1.190118.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;android;10.1.0;11;network/wifi;Mozilla/5.0 (Linux; Android 11; Redmi K30 5G Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045511 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;11.4;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79", "jdapp;android;10.1.0;10;;network/wifi;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A6000 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045224 Mobile Safari/537.36", "jdapp;android;10.1.0;9;network/wifi;Mozilla/5.0 (Linux; Android 9; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;android;10.1.0;8.1.0;network/wifi;Mozilla/5.0 (Linux; Android 8.1.0; 16 X Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;android;10.1.0;8.0.0;network/wifi;Mozilla/5.0 (Linux; Android 8.0.0; HTC U-3w Build/OPR6.170623.013; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.0.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.2;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.2;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;8.1.0;network/wifi;Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; Redmi K20 Pro Premium Edition Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;11;network/wifi;Mozilla/5.0 (Linux; Android 11; Redmi K20 Pro Premium Edition Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045513 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"];
-function randomNumber(_0x5bfc5b = 0, _0x3ca142 = 100) {
-  return Math.min(Math.floor(_0x5bfc5b + Math.random() * (_0x3ca142 - _0x5bfc5b)), _0x3ca142);
-}
-let config = {};
-try {
-  config = JSON.parse(fs.readFileSync(configPath, "utf8"));
-} catch (_0x4aa4de) {
-  console.error("无法读取或解析配置文件:", _0x4aa4de);
-  process.exit(1);
-}
-const logDir = path.join(__dirname, "log");
-if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(logDir);
-}
-const logFileName = "app_" + timeFormat(new Date(), "date") + ".log";
-const logFilePath = path.join(logDir, logFileName);
-const originalConsoleLog = console.log;
-console.log = function (..._0x483944) {
-  const _0x3533f4 = util.format(..._0x483944) + "\n";
-  fs.appendFileSync(logFilePath, _0x3533f4);
-  originalConsoleLog.apply(console, _0x483944);
-};
-const originalConsoleError = console.error;
-console.error = function (..._0x42449b) {
-  const _0x407ee2 = util.format(..._0x42449b) + "\n";
-  fs.appendFileSync(logFilePath, _0x407ee2);
-  originalConsoleError.apply(console, _0x42449b);
-};
-let tryNum = 4;
-let maxQq = 20;
-let maxXc = 3;
-let qqjgTime = 250;
-let maxAccount = 8;
-let ycTime = 100;
-let cookiesArr = [];
-let cookie = "";
-let canTaskFlag = [];
-let TgCkArray = [];
-let lqSucArray = [];
-let AllEendCode = "|A9|A6|A14|D2|";
-let PEendCode = "|A1|A12|A13|A19|A26|";
-let JDTimes = new Date().getTime();
-let apiArray = [];
-let nowIndex = 0;
-let JDTimeJg = 0;
-let yhqAPiHasSuccess = {};
-let nextHour = 0;
-let xtTkSign = "";
-let ckerror = [];
-let removeYhq = [];
-let nowRunYhq = "";
-let user_agent = "";
-let paramsSignLiteMy = "";
-if (config.JD_COOKIE) {
-  cookiesArr = config.JD_COOKIE;
-} else {
-  console.log("【提示】请先添加JD_COOKIE");
-}
-if (config.YHQ_QL_SIGN) {
-  xtTkSign = config.YHQ_QL_SIGN;
-  if (!getQmExpireDate(xtTkSign, 2)) {
-    console.error("激活码已过期！");
-  }
-} else {
-  console.error("请增加环境变量YHQ_QL_SIGN！");
-}
-if (config.YHQ_REMOVE && config.YHQ_REMOVE.split(",").length >= 1) {
-  if (config.YHQ_REMOVE.toLowerCase() == "all") {
-    console.log("读取环境变量排除的优惠券为：不抢作者所有的券！");
-    apiList = [];
-  } else {
-    console.log("读取环境变量排除的优惠券为：" + config.YHQ_REMOVE);
-    removeYhq = config.YHQ_REMOVE.split(",");
-  }
-}
-if (config.YHQ_NOWRUN) {
-  console.log("读取环境变量立即执行优惠券为：" + config.YHQ_NOWRUN);
-  nowRunYhq = config.YHQ_NOWRUN;
-}
-try {
-  const apiListMy = require("./jdYhqApiListMy.js").apiList;
-  if (apiListMy.length > 0) {
-    for (var alm in apiListMy) {
-      if (apiListMy[alm].qName && apiListMy[alm].qApi && apiListMy[alm].qTime) {
-        apiList.push(apiListMy[alm]);
-        console.log("加载自定义API:" + apiListMy[alm].qName);
-      }
-    }
-  }
-} catch (_0x15cc0e) {
-  console.log("未配置自定义API！");
-}
-try {
-  paramsSignLiteMy = new window.ParamsSignLite({
-    appId: "35fa0",
-    preRequest: false
-  });
-} catch (_0x4bc485) {}
-if (config.YHQ_API && config.YHQ_API.indexOf(",") > -1 && config.YHQ_API.split(",").length >= 5) {
-  console.log("读取环境变量成功：" + config.YHQ_API);
-  let YHQ_API_ARR = config.YHQ_API.split(",");
-  tryNum = parseInt(YHQ_API_ARR[0]);
-  if (parseInt(YHQ_API_ARR[1]) > maxQq) {
-    maxQq = parseInt(YHQ_API_ARR[1]);
-  }
-  maxXc = parseInt(YHQ_API_ARR[2]);
-  qqjgTime = parseInt(YHQ_API_ARR[3]);
-  maxAccount = parseInt(YHQ_API_ARR[4]);
-  if (YHQ_API_ARR.length >= 6) {
-    ycTime = parseInt(YHQ_API_ARR[5]);
-  }
-}
-console.log("\n" + timeFormat() + ":" + "----脚本运行成功，请不要关闭窗口----");
-let isMainRunning = false;
-function executeMain() {
-  if (isMainRunning) {
-    return;
-  }
-  isMainRunning = true;
-  try {
-    resertCs();
-    main();
-  } catch (_0x3380d3) {
-    console.error("Error occurred in main:", _0x3380d3);
-  } finally {
-    isMainRunning = false;
-  }
-}
-executeMain();
-cron.schedule("58 * * * *", () => {
-  executeMain();
-});
-async function main() {
-  try {
-    console.log("\n" + timeFormat() + ":" + "----开始运行脚本----");
-    if (!getQmExpireDate(xtTkSign, 2)) {
-      console.error("激活码已过期！");
-      myNotice("激活码已过期！");
-      return;
-    }
-    if (!cookiesArr[0]) {
-      console.log("【提示】请先增加JD账号一cookie");
-      return;
-    }
-    if (new Date().getDate() == 1 && new Date().getHours() == 0) {
-      $.setjson({}, "yhqAPiHasSuccess");
-      console.log("清空缓存！");
-    }
-    nextHour = nextHourF();
-    console.log("下次抢券时间：" + nextHour + ":00:00");
-    user_agent = USER_AGENTS[randomNumber(0, USER_AGENTS.length)];
-    for (var _0x475933 in apiList) {
-      if (nowRunYhq && nowRunYhq.length > 0 && nowRunYhq == apiList[_0x475933].qName) {
-        console.log("立即抢券（跑完记得删除或禁用该环境变量）：" + apiList[_0x475933].qName);
-        $.CryptoJS = $.isNode() ? require("crypto-js") : {};
-        await requestAlgo();
-        apiArray.push(apiList[_0x475933]);
-        doAPIList(apiArray.length - 1);
-        continue;
-      }
-      if (checkYhq(apiList[_0x475933], nextHour) && !isRemoveYhqF(apiList[_0x475933]) && apiArray.length < maxQq) {
-        apiArray.push(apiList[_0x475933]);
-        console.log("名称：" + apiList[_0x475933].qName);
-      }
-    }
-    if (apiArray.length <= 0) {
-      console.log("当前时间段没有优惠券需要领取！");
-      return;
-    }
-    if ($.getdata("JDTimeJg") && $.getdata("JDTimeJg") != 0) {
-      JDTimeJg = $.getdata("JDTimeJg");
-    }
-    if ($.getjson("yhqAPiHasSuccess")) {
-      yhqAPiHasSuccess = $.getjson("yhqAPiHasSuccess");
-    }
-    let _0x56aaf1 = jgNextHourF() + JDTimeJg - ycTime;
-    if (_0x56aaf1 > 600000) {
-      console.log(parseInt(_0x56aaf1 / 60 / 1000) + "分后才开始！");
-      return;
-    }
-    if (_0x56aaf1 > 0) {
-      console.log(parseInt(_0x56aaf1 / 60 / 1000) + "分后开始任务，请不要结束任务！");
-      await $.wait(_0x56aaf1);
-    }
-    for (let _0x2b707c in apiArray) {
-      if (!yhqAPiHasSuccess[apiArray[_0x2b707c].qName]) {
-        yhqAPiHasSuccess[apiArray[_0x2b707c].qName] = {};
-      }
-      doAPIList(_0x2b707c);
-    }
-    await $.wait(3000);
-    for (let _0xde5708 in apiArray) {
-      let _0x43da72 = "";
-      if (lqSucArray[_0xde5708].length > 0) {
-        if (apiArray[_0xde5708].qName) {
-          _0x43da72 += "\n券【" + apiArray[_0xde5708].qName + "】";
-        }
-        _0x43da72 += "成功领取的用户有：";
-        for (var _0x410b65 in lqSucArray[_0xde5708]) {
-          cookie = cookiesArr[lqSucArray[_0xde5708][_0x410b65]];
-          let _0xfc8a9 = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-          _0x43da72 += "\n" + (lqSucArray[_0xde5708][_0x410b65] + 1) + "、" + _0xfc8a9;
-        }
-        console.log("\n************************\n");
-        console.log(_0x43da72);
-      }
-      if (_0x43da72) {
-        myNotice(_0x43da72);
-        console.log(_0x43da72);
-        _0x43da72 = "";
-      }
-    }
-    $.setjson(yhqAPiHasSuccess, "yhqAPiHasSuccess");
-  } catch (_0x4fea89) {
-    console.error("main function error:", _0x4fea89);
-  }
-}
-function resertCs() {
-  canTaskFlag = [];
-  TgCkArray = [];
-  lqSucArray = [];
-  apiArray = [];
-  nowIndex = 0;
-  yhqAPiHasSuccess = {};
-}
-async function doAPIList(_0x1130fa) {
-  canTaskFlag[_0x1130fa] = true;
-  TgCkArray[_0x1130fa] = [];
-  lqSucArray[_0x1130fa] = [];
-  for (let _0xda9693 = 1; _0xda9693 <= tryNum; _0xda9693++) {
-    if (canTaskFlag[_0x1130fa] && TgCkArray[_0x1130fa].length < cookiesArr.length && TgCkArray[_0x1130fa].length < maxAccount) {
-      console.log("\n\n***开始领券【" + apiArray[_0x1130fa].qName + "】第" + _0xda9693 + "次请求***");
-      for (let _0x5886da = 0; _0x5886da < cookiesArr.length && _0x5886da < maxAccount; _0x5886da++) {
-        let _0xfb2c35 = apiArray[_0x1130fa].ckIndex ? apiArray[_0x1130fa].ckIndex : 0;
-        if (_0xfb2c35 > 0) {
-          if (_0x5886da + 1 < _0xfb2c35) {
-            continue;
-          } else {
-            if (_0x5886da + 1 > _0xfb2c35) {
-              break;
-            } else {
-              console.log("开始执行账号" + _0xfb2c35 + "专属ck:");
-            }
-          }
-        }
-        if (canTaskFlag[_0x1130fa]) {
-          if (cookiesArr[_0x5886da]) {
-            let _0x1ab9bb = decodeURIComponent(cookiesArr[_0x5886da].match(/pt_pin=([^; ]+)(?=;?)/) && cookiesArr[_0x5886da].match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-            if (TgCkArray[_0x1130fa].includes(_0x5886da)) {
-              console.log("\n\n跳过账号" + (_0x5886da + 1) + ":" + _0x1ab9bb + "！");
-              continue;
-            }
-            try {
-              if (yhqAPiHasSuccess[apiArray[_0x1130fa].qName][_0x1ab9bb] && nextHour != 0) {
-                let _0x330c4c = getNowDate();
-                if (DateDiff(_0x330c4c, yhqAPiHasSuccess[apiArray[_0x1130fa].qName][_0x1ab9bb]) < apiArray[_0x1130fa].lqSpace) {
-                  console.log("\n\n其他时间领取成功跳过账号" + (_0x5886da + 1) + ":" + _0x1ab9bb + "！");
-                  TgCkArray[_0x1130fa].push(_0x5886da);
-                  continue;
-                }
-              }
-            } catch (_0x514202) {}
-            nowIndex++;
-            if (nowIndex >= maxXc) {
-              if (nowIndex % maxXc == 0) {
-                await $.wait(qqjgTime - 20);
-              } else {
-                await $.wait(10);
-              }
-            }
-            doApiTask(_0x1130fa, _0x5886da);
-          }
-        } else {
-          console.log("该券已无或者无账号需要请求！");
-          break;
-        }
-      }
-    } else {
-      break;
-    }
-  }
-}
-async function doApiTask(_0x3f1800, _0x3a2f89) {
-  console.log("\n\n" + nowIndex + "、" + timeFormat() + (":开始领取" + apiArray[_0x3f1800].qName + "_账号" + (_0x3a2f89 + 1)));
-  return new Promise(async _0x342277 => {
-    if (canTaskFlag[_0x3f1800]) {
-      if (apiArray[_0x3f1800].qName.indexOf("G") > -1 || apiArray[_0x3f1800].qApi.indexOf("https://s.m.jd.com") > -1 || apiArray[_0x3f1800].qApi.indexOf("h5_awake_wxapp") > -1) {
-        const _0x2db48c = await getApiUrlGet(_0x3f1800, _0x3a2f89);
-        $.get(_0x2db48c, (_0x548d56, _0xbe52ff, _0x4ad5af) => {
-          try {
-            if (_0x548d56) {
-              console.log("API请求失败，请检查网络重试");
-            } else {
-              cookie = cookiesArr[_0x3a2f89];
-              let _0xf29872 = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-              console.log("\n\n*" + apiArray[_0x3f1800].qName + "_【账号" + (_0x3a2f89 + 1) + "】" + _0xf29872 + "*");
-              console.log(timeFormat() + ":" + _0x4ad5af);
-              if (_0x4ad5af.indexOf("成功") > -1) {
-                lqSucArray[_0x3f1800].push(_0x3a2f89);
-                yhqAPiHasSuccess[apiArray[_0x3f1800].qName][_0xf29872] = getNowDate();
-              } else {
-                if (_0x4ad5af.indexOf("再来") > -1 || _0x4ad5af.indexOf("抢光") > -1) {
-                  canTaskFlag[_0x3f1800] = false;
-                }
-              }
-            }
-          } catch (_0x5b40c8) {
-            TgCkArray[_0x3f1800].push(_0x3a2f89);
-            $.logErr(_0x5b40c8, _0xbe52ff);
-          } finally {
-            _0x342277(_0x4ad5af);
-          }
-        });
-      } else {
-        const _0x92f95 = await getApiUrl(_0x3f1800, _0x3a2f89);
-        $.post(_0x92f95, (_0x2bf0b0, _0x42f318, _0x331315) => {
-          try {
-            if (_0x2bf0b0) {
-              console.log("" + JSON.stringify(_0x2bf0b0));
-              console.log("API请求失败，请检查网络重试");
-            } else {
-              cookie = cookiesArr[_0x3a2f89];
-              let _0x5a0228 = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-              console.log("\n\n*" + apiArray[_0x3f1800].qName + "_【账号" + (_0x3a2f89 + 1) + "】" + _0x5a0228 + "*");
-              _0x331315 = JSON.parse(_0x331315);
-              let _0x560c69 = "";
-              let _0x722f1f = "";
-              try {
-                _0x722f1f = "|" + _0x331315.subCode + "|";
-                _0x560c69 = _0x331315.subCodeMsg || _0x331315.resultData.msg;
-              } catch (_0xbd1c60) {}
-              if (_0x331315.subCode && (_0x331315.subCode == "A1" || _0x331315.subCode == "0") || _0x560c69 && _0x560c69.indexOf("成功") > -1) {
-                lqSucArray[_0x3f1800].push(_0x3a2f89);
-                yhqAPiHasSuccess[apiArray[_0x3f1800].qName][_0x5a0228] = getNowDate();
-              }
-              if (AllEendCode.indexOf(_0x722f1f) > -1) {
-                if (_0x331315.subCode == "D2" && _0x560c69.substr(_0x560c69.indexOf("请") + 1, 2) == nextHour) {
-                  console.log(timeFormat() + ":时间未到继续：" + _0x560c69);
-                } else {
-                  if (nextHour == 0) {
-                    console.log(timeFormat() + ":继续：" + _0x560c69);
-                  } else {
-                    canTaskFlag[_0x3f1800] = false;
-                    console.log(timeFormat() + ":" + _0x560c69);
-                  }
-                }
-              } else {
-                if (PEendCode.indexOf(_0x722f1f) > -1) {
-                  TgCkArray[_0x3f1800].push(_0x3a2f89);
-                  console.log(timeFormat() + ":" + _0x560c69 + ",subCode2_" + _0x722f1f);
-                } else {
-                  if (_0x331315.code && _0x331315.code == "3") {
-                    TgCkArray[_0x3f1800].push(_0x3a2f89);
-                    console.log(timeFormat() + ":ck过期！");
-                    if (!checkHasCz(ckerror, _0x3a2f89)) {
-                      ckerror.push(_0x3a2f89);
-                      myNotice("【账号" + (_0x3a2f89 + 1) + "】" + _0x5a0228 + "——ck过期!");
-                      console.error("【账号" + (_0x3a2f89 + 1) + "】" + _0x5a0228 + "——ck过期!");
-                    }
-                  } else {
-                    console.log(timeFormat() + ":" + JSON.stringify(_0x331315));
-                  }
-                }
-              }
-            }
-          } catch (_0x3dcf43) {
-            TgCkArray[_0x3f1800].push(_0x3a2f89);
-            $.logErr(_0x3dcf43, _0x42f318);
-          } finally {
-            _0x342277(_0x331315);
-          }
-        });
-      }
-    } else {
-      console.log("该券已无或已结束！");
-    }
-  });
-}
-function getJDTime() {
-  return new Promise(_0x430a62 => {
-    $.post({
-      url: "https://api.m.jd.com/client.action?functionId=queryMaterialProducts&client=wh5"
-    }, async (_0x50fb28, _0x2c6a35, _0x590593) => {
-      try {
-        if (_0x50fb28) {
-          console.log("获取JD时间失败");
-        } else {
-          _0x590593 = JSON.parse(_0x590593);
-          if (_0x590593.code && _0x590593.code == "0") {
-            JDTimes = parseInt(_0x590593.currentTime2);
-            if (JDTimeJg == 0 || JDTimeJg != 0 && new Date().getTime() - JDTimes < JDTimeJg) {
-              JDTimeJg = new Date().getTime() - JDTimes;
-            }
-          } else {
-            console.log("获取JD时间失败:" + JSON.stringify(_0x590593));
-          }
-        }
-      } catch (_0x40e88d) {
-        $.logErr(_0x40e88d, _0x2c6a35);
-      } finally {
-        _0x430a62(_0x590593);
-      }
-    });
-  });
-}
-function checkYhq(_0x9b854e, _0x4b63fb) {
-  if (!_0x9b854e.endDate) {
-    return true;
-  }
-  if (_0x9b854e.endDate && _0x9b854e.qTime && new Date(_0x9b854e.endDate + " 23:59:59").getTime() > new Date().getTime()) {
-    let _0x33236e = _0x9b854e.qTime.split(",");
-    if (_0x33236e.length > 0 && _0x33236e.includes(_0x4b63fb + "")) {
-      return true;
-    }
-  }
-  return false;
-}
-function isRemoveYhqF(_0x4f1915) {
-  let _0x4f7204 = false;
-  if (removeYhq && removeYhq.length > 0) {
-    for (var _0xc3cf1d in removeYhq) {
-      if (_0x4f1915.qName == removeYhq[_0xc3cf1d]) {
-        console.log("排除优惠券：" + _0x4f1915.qName);
-        _0x4f7204 = true;
-        break;
-      }
-    }
-  }
-  return _0x4f7204;
-}
-async function getApiUrl(_0x246534, _0x2f40b3) {
-  const _0x4bc5ca = await getDecryptUrlTy(getApiLog(apiArray[_0x246534].qApi));
-  return {
-    url: _0x4bc5ca,
-    headers: {
-      "user-agent": user_agent,
-      "content-Type": "application/x-www-form-urlencoded",
-      accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-      "accept-encoding": "gzip, deflate, br",
-      "accept-language": "zh-CN,zh;q=0.9",
-      "cache-control": "max-age=0",
-      cookie: cookiesArr[_0x2f40b3]
-    }
-  };
-}
-async function getApiUrlGet(_0x92b0d5, _0x5337b5) {
-  if (apiArray[_0x92b0d5].qApi.indexOf("https://s.m.jd.com") > -1 || apiArray[_0x92b0d5].qApi.indexOf("h5_awake_wxapp") > -1) {
-    const _0x386bb7 = await getDecryptUrlTy(getApiLog(apiArray[_0x92b0d5].qApi));
-    return {
-      url: _0x386bb7,
-      headers: {
-        "User-Agent": user_agent,
-        Cookie: cookiesArr[0],
-        Accept: "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-        Referer: "https://coupon.m.jd.com/"
-      }
-    };
-  } else {
-    if (apiArray[_0x92b0d5].qApi.indexOf("appid=plus_business") > -1) {
-      return {
-        url: apiArray[_0x92b0d5].qApi,
-        headers: {
-          "User-Agent": user_agent,
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "zh-CN,zh;q=0.9",
-          Cookie: cookiesArr[_0x5337b5],
-          origin: "https://plus.m.jd.com"
-        }
-      };
-    } else {
-      return {
-        url: apiArray[_0x92b0d5].qApi,
-        headers: {
-          "User-Agent": user_agent,
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "zh-CN,zh;q=0.9",
-          Cookie: cookiesArr[_0x5337b5]
-        }
-      };
-    }
-  }
-}
-function jgNextHourF() {
-  let _0x483803 = timeFormat().substr(0, 13) + ":00:00";
-  let _0x1ece0a = Date.parse(new Date(_0x483803)) + 3600000;
-  return _0x1ece0a - new Date().getTime();
-}
-function myNotice(_0x257de9) {}
-function nextHourF() {
-  let _0x293187 = new Date();
-  return _0x293187.getHours() + 1 >= 24 ? 0 : _0x293187.getHours() + 1;
-}
-function DateDiff(_0x18862c, _0x3e8168) {
-  var _0x16bc73;
-  var _0x8b51f0;
-  var _0x58cfca;
-  var _0x394f50;
-  _0x16bc73 = _0x18862c.split("-");
-  _0x8b51f0 = new Date(_0x16bc73[1] + "-" + _0x16bc73[2] + "-" + _0x16bc73[0]);
-  _0x16bc73 = _0x3e8168.split("-");
-  _0x58cfca = new Date(_0x16bc73[1] + "-" + _0x16bc73[2] + "-" + _0x16bc73[0]);
-  _0x394f50 = parseInt(Math.abs(_0x8b51f0 - _0x58cfca) / 1000 / 60 / 60 / 24);
-  return _0x394f50;
-}
-function getNowDate() {
-  let _0x18a353 = new Date();
-  return _0x18a353.getFullYear() + "-" + (_0x18a353.getMonth() + 1 >= 10 ? _0x18a353.getMonth() + 1 : "0" + (_0x18a353.getMonth() + 1)) + "-" + (_0x18a353.getDate() >= 10 ? _0x18a353.getDate() : "0" + _0x18a353.getDate());
-}
-function timeFormat(_0x364c15, _0x1ca9c8) {
-  let _0x2764cc;
-  if (_0x364c15) {
-    _0x2764cc = new Date(_0x364c15);
-  } else {
-    _0x2764cc = new Date();
-  }
-  if (_0x1ca9c8 == "date") {
-    return _0x2764cc.getFullYear() + "-" + (_0x2764cc.getMonth() + 1 >= 10 ? _0x2764cc.getMonth() + 1 : "0" + (_0x2764cc.getMonth() + 1)) + "-" + (_0x2764cc.getDate() >= 10 ? _0x2764cc.getDate() : "0" + _0x2764cc.getDate());
-  }
-  return _0x2764cc.getFullYear() + "-" + (_0x2764cc.getMonth() + 1 >= 10 ? _0x2764cc.getMonth() + 1 : "0" + (_0x2764cc.getMonth() + 1)) + "-" + (_0x2764cc.getDate() >= 10 ? _0x2764cc.getDate() : "0" + _0x2764cc.getDate()) + " " + (_0x2764cc.getHours() >= 10 ? _0x2764cc.getHours() : "0" + _0x2764cc.getHours()) + ":" + (_0x2764cc.getMinutes() >= 10 ? _0x2764cc.getMinutes() : "0" + _0x2764cc.getMinutes()) + ":" + (_0x2764cc.getSeconds() >= 10 ? _0x2764cc.getSeconds() : "0" + _0x2764cc.getSeconds()) + ":" + _0x2764cc.getMilliseconds();
-}
-function getApiLog(_0xbedc41) {
-  let _0x2b7c52 = smashUtils.getRandom(8);
-  let _0x23fcfc = (smashUtils.get_risk_result({
-    id: "coupon",
-    data: {
-      random: _0x2b7c52
-    }
-  }, xtTkSign) || {}).log;
-  let _0x382804 = encodeURIComponent(",\"log\":\"" + _0x23fcfc + "\",\"random\":\"" + _0x2b7c52 + "\"");
-  if (_0xbedc41 && _0xbedc41.indexOf("%7D") > -1) {
-    _0x382804 = _0xbedc41.substring(0, _0xbedc41.indexOf("%7D")) + _0x382804 + _0xbedc41.substring(_0xbedc41.indexOf("%7D"), _0xbedc41.length);
-  }
-  return _0x382804;
-}
-function checkHasCz(_0x459a46, _0x16f9f0) {
-  let _0x1e9cfc = false;
-  if (_0x459a46) {
-    for (var _0x103085 in _0x459a46) {
-      if (_0x459a46[_0x103085] == _0x16f9f0) {
-        _0x1e9cfc = true;
-        break;
-      }
-    }
-  }
-  return _0x1e9cfc;
-}
-function getUrlQueryParams(_0x297fd0, _0x759b98) {
-  let _0x1fb4b1 = new RegExp("(^|&)" + _0x759b98 + "=([^&]*)(&|$)", "i");
-  let _0x1ffedf = _0x297fd0.split("?")[1].substr(0).match(_0x1fb4b1);
-  if (_0x1ffedf != null) {
-    return decodeURIComponent(_0x1ffedf[2]);
-  }
-  return "";
-}
-function sha256Hash(_0x15992f) {
-  const _0x6e7a3 = new TextEncoder();
-  const _0x15db4e = _0x6e7a3.encode(_0x15992f);
-  const _0x5a0968 = $.CryptoJS.SHA256($.CryptoJS.enc.Utf8.parse(_0x15992f));
-  const _0x3efe20 = _0x5a0968.toString($.CryptoJS.enc.Hex);
-  return _0x3efe20;
-}
-function getDecryptUrlTy(_0x5e7604) {
-  return new Promise((_0x5a8d4f, _0x16c80a) => {
-    let _0x468420 = sha256Hash(getUrlQueryParams(_0x5e7604, "body"));
-    let _0x642f33 = {
-      appid: "babelh5",
-      body: _0x468420,
-      client: "wh5",
-      clientVersion: "1.0.0",
-      functionId: "newBabelAwardCollection"
-    };
-    paramsSignLiteMy.sign(_0x642f33).then(_0x4e9d26 => {
-      _0x5a8d4f(_0x5e7604 + "&h5st=" + _0x4e9d26.h5st);
-    }).catch(_0x2ce88b => {
-      console.error("签名失败:", _0x2ce88b);
-      _0x5a8d4f(_0x5e7604);
-    });
-  });
-}
-function getDecryptUrl(_0x1b0ab0) {
-  _0x1b0ab0 = _0x1b0ab0 + "&t=" + Date.now();
-  stk = getUrlQueryParams(_0x1b0ab0, "_stk");
-  if (stk) {
-    const _0x4093b9 = format("yyyyMMddhhmmssSSS", Date.now());
-    const _0x50dfae = $.genKey($.token, $.fp.toString(), _0x4093b9.toString(), $.appId.toString(), $.CryptoJS).toString($.CryptoJS.enc.Hex);
-    let _0x52c656 = "";
-    stk.split(",").map((_0x22f5cc, _0x18c7a4) => {
-      _0x52c656 += _0x22f5cc + ":" + getUrlQueryParams(_0x1b0ab0, _0x22f5cc) + (_0x18c7a4 === stk.split(",").length - 1 ? "" : "&");
-    });
-    const _0x332596 = $.CryptoJS.HmacSHA256(_0x52c656, _0x50dfae.toString()).toString($.CryptoJS.enc.Hex);
-    return _0x1b0ab0 + "&h5st=" + encodeURIComponent(["".concat(_0x4093b9.toString()), "".concat($.fp.toString()), "".concat($.appId.toString()), "".concat($.token), "".concat(_0x332596), "3.0;".concat(_0x4093b9)].join(";")) + "&__t=" + Date.now();
-  }
-}
-async function requestAlgo() {
-  $.appId = "8ba9b";
-  $.fp = (getRandomIDPro({
-    size: 13
-  }) + Date.now()).slice(0, 16);
-  const _0x555c7d = {
-    url: "https://cactus.jd.com/request_algo?g_ty=ajax",
-    headers: {
-      Authority: "cactus.jd.com",
-      Pragma: "no-cache",
-      "Cache-Control": "no-cache",
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Origin: "https://st.jingxi.com",
-      "Sec-Fetch-Site": "cross-site",
-      "User-Agent": $.user_agent,
-      "Sec-Fetch-Mode": "cors",
-      "Sec-Fetch-Dest": "empty",
-      Referer: "https://st.jingxi.com/",
-      "Accept-Language": "zh-CN,zh;q=0.9,zh-TW;q=0.8,en;q=0.7"
-    },
-    body: JSON.stringify({
-      version: "1.0",
-      fp: $.fp,
-      appId: $.appId,
-      timestamp: Date.now(),
-      platform: "web",
-      expandParams: ""
-    })
-  };
-  return new Promise(async _0x411c1b => {
-    $.post(_0x555c7d, (_0x37804b, _0x4c601, _0x458900) => {
-      try {
-        const {
-          ret,
-          msg,
-          data: {
-            result
-          } = {}
-        } = JSON.parse(_0x458900);
-        $.token = result.tk;
-        $.genKey = new Function("return " + result.algo)();
-      } catch (_0x2e1a46) {
-        $.logErr(_0x2e1a46, _0x4c601);
-      } finally {
-        _0x411c1b();
-      }
-    });
-  });
-}
-function getRandomIDPro() {
-  var _0x4ab1af;
-  var _0x43a647;
-  var _0x1e0955 = undefined === (_0x2d0eeb = (_0x43a647 = 0 < arguments.length && undefined !== arguments[0] ? arguments[0] : {}).size) ? 10 : _0x2d0eeb;
-  var _0x2d0eeb = undefined === (_0x2d0eeb = _0x43a647.dictType) ? "number" : _0x2d0eeb;
-  var _0x52f2ff = "";
-  if ((_0x43a647 = _0x43a647.customDict) && "string" == typeof _0x43a647) {
-    _0x4ab1af = _0x43a647;
-  } else {
-    switch (_0x2d0eeb) {
-      case "alphabet":
-        _0x4ab1af = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        break;
-      case "max":
-        _0x4ab1af = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-";
-        break;
-      case "number":
-      default:
-        _0x4ab1af = "0123456789";
-    }
-  }
-  for (; _0x1e0955--;) {
-    _0x52f2ff += _0x4ab1af[Math.random() * _0x4ab1af.length | 0];
-  }
-  return _0x52f2ff;
-}
-function format(_0xd21201, _0x4a4f70) {
-  if (!_0xd21201) {
-    _0xd21201 = "yyyy-MM-dd";
-  }
-  var _0x3e5593;
-  if (!_0x4a4f70) {
-    _0x3e5593 = Date.now();
-  } else {
-    _0x3e5593 = new Date(_0x4a4f70);
-  }
-  var _0x2215f1 = new Date(_0x3e5593);
-  var _0x168ad8 = _0xd21201;
-  var _0x4c3522 = {
-    "M+": _0x2215f1.getMonth() + 1,
-    "d+": _0x2215f1.getDate(),
-    "D+": _0x2215f1.getDate(),
-    "h+": _0x2215f1.getHours(),
-    "H+": _0x2215f1.getHours(),
-    "m+": _0x2215f1.getMinutes(),
-    "s+": _0x2215f1.getSeconds(),
-    "w+": _0x2215f1.getDay(),
-    "q+": Math.floor((_0x2215f1.getMonth() + 3) / 3),
-    "S+": _0x2215f1.getMilliseconds()
-  };
-  /(y+)/i.test(_0x168ad8) && (_0x168ad8 = _0x168ad8.replace(RegExp.$1, "".concat(_0x2215f1.getFullYear()).substr(4 - RegExp.$1.length)));
-  Object.keys(_0x4c3522).forEach(_0x1d3aac => {
-    if (new RegExp("(".concat(_0x1d3aac, ")")).test(_0x168ad8)) {
-      var _0x51cb62 = "S+" === _0x1d3aac ? "000" : "00";
-      _0x168ad8 = _0x168ad8.replace(RegExp.$1, 1 == RegExp.$1.length ? _0x4c3522[_0x1d3aac] : "".concat(_0x51cb62).concat(_0x4c3522[_0x1d3aac]).substr("".concat(_0x4c3522[_0x1d3aac]).length));
-    }
-  });
-  return _0x168ad8;
-}
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
   class s {
@@ -1392,4 +654,703 @@ function Env(t, e) {
       (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t);
     }
   }(t, e);
+}
+const $ = new Env("领取优惠券");
+const nowVersion = "20250626";
+console.log("当前版本" + nowVersion);
+setInterval(() => {}, 1000);
+const cron = require("node-cron");
+const fs = require("fs");
+const path = require("path");
+const util = require("util");
+const {
+  JSDOM
+} = require("jsdom");
+const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>", {
+  url: "https://www.jd.com"
+});
+const window = dom.window;
+const document = window.document;
+window.HTMLCanvasElement.prototype.getContext = function () {
+  return {
+    fillRect: () => {},
+    clearRect: () => {},
+    getImageData: () => ({
+      data: []
+    }),
+    putImageData: () => {}
+  };
+};
+global.window = window;
+global.document = document;
+global.Element = window.Element;
+const configPath = path.join(__dirname, "config.json");
+const smashUtils = require("./jdJm.js").smashUtils;
+const ParamsSignLite = require("./jdJm2.js");
+$.CryptoJS = require("crypto-js");
+let apiList = require("./jdYhqApiList.js").apiList;
+const USER_AGENTS = ["jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A5010 Build/QKQ1.191014.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;9;network/4g;Mozilla/5.0 (Linux; Android 9; Mi Note 3 Build/PKQ1.181007.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; GM1910 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;android;10.1.0;9;network/wifi;Mozilla/5.0 (Linux; Android 9; 16T Build/PKQ1.190616.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;13.6;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.6;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.5;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.7;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;13.4;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 13_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;9;network/wifi;Mozilla/5.0 (Linux; Android 9; MI 6 Build/PKQ1.190118.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;android;10.1.0;11;network/wifi;Mozilla/5.0 (Linux; Android 11; Redmi K30 5G Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045511 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;11.4;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 11_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15F79", "jdapp;android;10.1.0;10;;network/wifi;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A6000 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045224 Mobile Safari/537.36", "jdapp;android;10.1.0;9;network/wifi;Mozilla/5.0 (Linux; Android 9; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;android;10.1.0;8.1.0;network/wifi;Mozilla/5.0 (Linux; Android 8.1.0; 16 X Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;android;10.1.0;8.0.0;network/wifi;Mozilla/5.0 (Linux; Android 8.0.0; HTC U-3w Build/OPR6.170623.013; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.0.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.2;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.2;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;8.1.0;network/wifi;Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; Redmi K20 Pro Premium Edition Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.3;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;iPhone;10.1.0;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1", "jdapp;android;10.1.0;11;network/wifi;Mozilla/5.0 (Linux; Android 11; Redmi K20 Pro Premium Edition Build/RKQ1.200826.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045513 Mobile Safari/537.36", "jdapp;android;10.1.0;10;network/wifi;Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36", "jdapp;iPhone;10.1.0;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"];
+function randomNumber(_0x10b0dc = 0, _0x392804 = 100) {
+  return Math.min(Math.floor(_0x10b0dc + Math.random() * (_0x392804 - _0x10b0dc)), _0x392804);
+}
+let config = {};
+try {
+  config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+} catch (_0x55246b) {
+  console.error("config.json文件读取失败，请检查文件格式否正确！");
+}
+const logDir = path.join(__dirname, "log");
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
+}
+const logFileName = "app_" + timeFormat(new Date(), "date") + ".log";
+const logFilePath = path.join(logDir, logFileName);
+const originalConsoleLog = console.log;
+console.log = function (..._0x5425d8) {
+  const _0x45c701 = util.format(..._0x5425d8) + "\n";
+  fs.appendFileSync(logFilePath, _0x45c701);
+  originalConsoleLog.apply(console, _0x5425d8);
+};
+const originalConsoleError = console.error;
+console.error = function (..._0x363e73) {
+  const _0x571bc5 = util.format(..._0x363e73) + "\n";
+  fs.appendFileSync(logFilePath, _0x571bc5);
+  originalConsoleError.apply(console, _0x363e73);
+};
+let tryNum = 4;
+let maxQq = 20;
+let maxXc = 3;
+let qqjgTime = 250;
+let maxAccount = 8;
+let ycTime = 100;
+let cookiesArr = [];
+let cookie = "";
+let canTaskFlag = [];
+let TgCkArray = [];
+let lqSucArray = [];
+let AllEendCode = "|A9|A6|A14|D2|";
+let PEendCode = "|A1|A12|A13|A19|A26|";
+let JDTimes = new Date().getTime();
+let apiArray = [];
+let nowIndex = 0;
+let JDTimeJg = 0;
+let yhqAPiHasSuccess = {};
+let nextHour = 0;
+let xtTkSign = "";
+let ckerror = [];
+let removeYhq = [];
+let nowRunYhq = "";
+let user_agent = "";
+let paramsSignLiteMy = "";
+if (config.JD_COOKIE) {
+  cookiesArr = config.JD_COOKIE;
+} else {
+  console.log("【提示】请先添加JD_COOKIE");
+}
+if (config.YHQ_QL_SIGN) {
+  xtTkSign = config.YHQ_QL_SIGN;
+  if (!getQmExpireDate(xtTkSign, 2)) {
+    console.error("激活码已过期！");
+  }
+} else {
+  console.error("请增加环境变量YHQ_QL_SIGN！");
+}
+if (config.YHQ_REMOVE && config.YHQ_REMOVE.split(",").length >= 1) {
+  if (config.YHQ_REMOVE.toLowerCase() == "all") {
+    console.log("读取环境变量排除的优惠券为：不抢作者所有的券！");
+    apiList = [];
+  } else {
+    console.log("读取环境变量排除的优惠券为：" + config.YHQ_REMOVE);
+    removeYhq = config.YHQ_REMOVE.split(",");
+  }
+}
+if (config.YHQ_NOWRUN) {
+  console.log("读取环境变量立即执行优惠券为：" + config.YHQ_NOWRUN);
+  nowRunYhq = config.YHQ_NOWRUN;
+}
+try {
+  const apiListMy = require("./jdYhqApiListMy.js").apiList;
+  if (apiListMy.length > 0) {
+    for (var alm in apiListMy) {
+      if (apiListMy[alm].qName && apiListMy[alm].qApi && apiListMy[alm].qTime) {
+        apiList.push(apiListMy[alm]);
+        console.log("加载自定义API:" + apiListMy[alm].qName);
+      }
+    }
+  }
+} catch (_0x32a978) {
+  console.log("未配置自定义API！");
+}
+try {
+  paramsSignLiteMy = new window.ParamsSignLite({
+    appId: "35fa0",
+    preRequest: false
+  });
+} catch (_0x27613d) {}
+if (config.YHQ_API && config.YHQ_API.indexOf(",") > -1 && config.YHQ_API.split(",").length >= 5) {
+  console.log("读取环境变量成功：" + config.YHQ_API);
+  let YHQ_API_ARR = config.YHQ_API.split(",");
+  tryNum = parseInt(YHQ_API_ARR[0]);
+  if (parseInt(YHQ_API_ARR[1]) > maxQq) {
+    maxQq = parseInt(YHQ_API_ARR[1]);
+  }
+  maxXc = parseInt(YHQ_API_ARR[2]);
+  qqjgTime = parseInt(YHQ_API_ARR[3]);
+  maxAccount = parseInt(YHQ_API_ARR[4]);
+  if (YHQ_API_ARR.length >= 6) {
+    ycTime = parseInt(YHQ_API_ARR[5]);
+  }
+}
+console.log("\n" + timeFormat() + ":" + "----脚本运行成功，请不要关闭窗口----");
+let isMainRunning = false;
+async function executeMain() {
+  if (isMainRunning) {
+    console.log("任务执行中...");
+    return;
+  }
+  isMainRunning = true;
+  try {
+    resertCs();
+    await main();
+  } catch (_0x3e10c9) {
+    console.error("main 函数执行失败:", _0x3e10c9);
+  } finally {
+    isMainRunning = false;
+  }
+}
+executeMain();
+cron.schedule("* * * * *", () => {
+  try {
+    const _0x4466ae = new Date().getMinutes();
+    if (_0x4466ae === 59) {
+      executeMain();
+    } else {
+      if (!isMainRunning && _0x4466ae % 5 === 0) {
+        console.log("\n" + timeFormat() + ":" + "未到任务执行时间，跳过执行......");
+      }
+    }
+  } catch (_0x12efec) {}
+});
+async function main() {
+  try {
+    console.log("\n" + timeFormat() + ":" + "----开始运行脚本----");
+    if (!getQmExpireDate(xtTkSign, 2)) {
+      console.error("激活码已过期！");
+      myNotice("激活码已过期！");
+      return;
+    }
+    if (!cookiesArr[0]) {
+      console.log("【提示】请先增加JD账号一cookie");
+      return;
+    } else {
+      console.log("共检测到" + cookiesArr.length + "个cookie");
+    }
+    if (new Date().getDate() == 1 && new Date().getHours() == 0) {
+      $.setjson({}, "yhqAPiHasSuccess");
+      console.log("清空缓存！");
+    }
+    nextHour = nextHourF();
+    console.log("下次抢券时间：" + nextHour + ":00:00");
+    user_agent = USER_AGENTS[randomNumber(0, USER_AGENTS.length)];
+    for (var _0x324183 in apiList) {
+      if (nowRunYhq && nowRunYhq.length > 0 && nowRunYhq == apiList[_0x324183].qName) {
+        console.log("立即抢券（跑完记得删除或禁用该环境变量）：" + apiList[_0x324183].qName);
+        apiArray.push(apiList[_0x324183]);
+        doAPIList(apiArray.length - 1);
+        continue;
+      }
+      if (checkYhq(apiList[_0x324183], nextHour) && !isRemoveYhqF(apiList[_0x324183]) && apiArray.length < maxQq) {
+        apiArray.push(apiList[_0x324183]);
+        console.log("名称：" + apiList[_0x324183].qName);
+      }
+    }
+    if (apiArray.length <= 0) {
+      console.log("当前时间段没有优惠券需要领取！");
+      return;
+    }
+    if ($.getdata("JDTimeJg") && $.getdata("JDTimeJg") != 0) {
+      JDTimeJg = $.getdata("JDTimeJg");
+    }
+    if ($.getjson("yhqAPiHasSuccess")) {
+      yhqAPiHasSuccess = $.getjson("yhqAPiHasSuccess");
+    }
+    let _0x5e2dc0 = jgNextHourF() + JDTimeJg - ycTime;
+    if (_0x5e2dc0 > 120000) {
+      console.log(parseInt(_0x5e2dc0 / 60 / 1000) + "分后才开始！");
+      return;
+    }
+    if (_0x5e2dc0 > 0) {
+      console.log(parseInt(_0x5e2dc0 / 60 / 1000) + "分后开始任务，请不要结束任务！");
+      await $.wait(_0x5e2dc0);
+    }
+    for (let _0x3f3e62 in apiArray) {
+      if (!yhqAPiHasSuccess[apiArray[_0x3f3e62].qName]) {
+        yhqAPiHasSuccess[apiArray[_0x3f3e62].qName] = {};
+      }
+      doAPIList(_0x3f3e62);
+    }
+    await $.wait(3000);
+    for (let _0x318b95 in apiArray) {
+      let _0x4f9613 = "";
+      if (lqSucArray[_0x318b95].length > 0) {
+        if (apiArray[_0x318b95].qName) {
+          _0x4f9613 += "\n券【" + apiArray[_0x318b95].qName + "】";
+        }
+        _0x4f9613 += "成功领取的用户有：";
+        for (var _0x5cd352 in lqSucArray[_0x318b95]) {
+          cookie = cookiesArr[lqSucArray[_0x318b95][_0x5cd352]];
+          let _0x199c12 = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+          _0x4f9613 += "\n" + (lqSucArray[_0x318b95][_0x5cd352] + 1) + "、" + _0x199c12;
+        }
+        console.log("\n************************\n");
+        console.log(_0x4f9613);
+      }
+      if (_0x4f9613) {
+        myNotice(_0x4f9613);
+        _0x4f9613 = "";
+      }
+    }
+    $.setjson(yhqAPiHasSuccess, "yhqAPiHasSuccess");
+  } catch (_0x1beda4) {
+    console.error("main function error:", _0x1beda4);
+  }
+}
+function resertCs() {
+  canTaskFlag = [];
+  TgCkArray = [];
+  lqSucArray = [];
+  apiArray = [];
+  nowIndex = 0;
+  yhqAPiHasSuccess = {};
+}
+async function doAPIList(_0x17299b) {
+  canTaskFlag[_0x17299b] = true;
+  TgCkArray[_0x17299b] = [];
+  lqSucArray[_0x17299b] = [];
+  for (let _0x1ae9fa = 1; _0x1ae9fa <= tryNum; _0x1ae9fa++) {
+    if (canTaskFlag[_0x17299b] && TgCkArray[_0x17299b].length < cookiesArr.length && TgCkArray[_0x17299b].length < maxAccount) {
+      console.log("\n\n***开始领券【" + apiArray[_0x17299b].qName + "】第" + _0x1ae9fa + "次请求***");
+      for (let _0x2f8830 = 0; _0x2f8830 < cookiesArr.length && _0x2f8830 < maxAccount; _0x2f8830++) {
+        let _0x31d078 = apiArray[_0x17299b].ckIndex ? apiArray[_0x17299b].ckIndex : 0;
+        if (_0x31d078 > 0) {
+          if (_0x2f8830 + 1 < _0x31d078) {
+            continue;
+          } else {
+            if (_0x2f8830 + 1 > _0x31d078) {
+              break;
+            } else {
+              console.log("开始执行账号" + _0x31d078 + "专属ck:");
+            }
+          }
+        }
+        if (canTaskFlag[_0x17299b]) {
+          if (cookiesArr[_0x2f8830]) {
+            let _0xd833b3 = decodeURIComponent(cookiesArr[_0x2f8830].match(/pt_pin=([^; ]+)(?=;?)/) && cookiesArr[_0x2f8830].match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+            if (TgCkArray[_0x17299b].includes(_0x2f8830)) {
+              console.log("\n\n跳过账号" + (_0x2f8830 + 1) + ":" + _0xd833b3 + "！");
+              continue;
+            }
+            try {
+              if (yhqAPiHasSuccess[apiArray[_0x17299b].qName][_0xd833b3] && nextHour != 0) {
+                let _0x46b04d = getNowDate();
+                if (DateDiff(_0x46b04d, yhqAPiHasSuccess[apiArray[_0x17299b].qName][_0xd833b3]) < apiArray[_0x17299b].lqSpace) {
+                  console.log("\n\n其他时间领取成功跳过账号" + (_0x2f8830 + 1) + ":" + _0xd833b3 + "！");
+                  TgCkArray[_0x17299b].push(_0x2f8830);
+                  continue;
+                }
+              }
+            } catch (_0x43004c) {}
+            nowIndex++;
+            if (nowIndex >= maxXc) {
+              if (nowIndex % maxXc == 0) {
+                await $.wait(qqjgTime - 20);
+              } else {
+                await $.wait(10);
+              }
+            }
+            doApiTask(_0x17299b, _0x2f8830);
+          }
+        } else {
+          console.log("该券已无或者无账号需要请求！");
+          break;
+        }
+      }
+    } else {
+      break;
+    }
+  }
+}
+async function doApiTask(_0x3a643b, _0x30c81e) {
+  console.log("\n\n" + nowIndex + "、" + timeFormat() + (":开始领取" + apiArray[_0x3a643b].qName + "_账号" + (_0x30c81e + 1)));
+  return new Promise(async _0x19db93 => {
+    if (canTaskFlag[_0x3a643b]) {
+      if (apiArray[_0x3a643b].qName.indexOf("G") > -1 || apiArray[_0x3a643b].qApi.indexOf("https://s.m.jd.com") > -1 || apiArray[_0x3a643b].qApi.indexOf("h5_awake_wxapp") > -1) {
+        const _0x5cd56e = await getApiUrlGet(_0x3a643b, _0x30c81e);
+        $.get(_0x5cd56e, (_0x524b4a, _0x1800da, _0x2ee809) => {
+          try {
+            if (_0x524b4a) {
+              console.log("API请求失败，请检查网络重试");
+            } else {
+              cookie = cookiesArr[_0x30c81e];
+              let _0x9a3fd6 = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+              console.log("\n\n*" + apiArray[_0x3a643b].qName + "_【账号" + (_0x30c81e + 1) + "】" + _0x9a3fd6 + "*");
+              console.log(timeFormat() + ":" + _0x2ee809);
+              if (_0x2ee809.indexOf("成功") > -1) {
+                lqSucArray[_0x3a643b].push(_0x30c81e);
+                yhqAPiHasSuccess[apiArray[_0x3a643b].qName][_0x9a3fd6] = getNowDate();
+              } else {
+                if (_0x2ee809.indexOf("再来") > -1 || _0x2ee809.indexOf("抢光") > -1) {
+                  canTaskFlag[_0x3a643b] = false;
+                }
+              }
+            }
+          } catch (_0x4c524e) {
+            TgCkArray[_0x3a643b].push(_0x30c81e);
+            $.logErr(_0x4c524e, _0x1800da);
+          } finally {
+            _0x19db93(_0x2ee809);
+          }
+        });
+      } else {
+        const _0x58baae = await getApiUrl(_0x3a643b, _0x30c81e);
+        $.post(_0x58baae, (_0x3fbe20, _0x446eb4, _0x36ca7e) => {
+          try {
+            if (_0x3fbe20) {
+              console.log("" + JSON.stringify(_0x3fbe20));
+              console.log("API请求失败，请检查网络重试");
+            } else {
+              cookie = cookiesArr[_0x30c81e];
+              let _0x4ff828 = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+              console.log("\n\n*" + apiArray[_0x3a643b].qName + "_【账号" + (_0x30c81e + 1) + "】" + _0x4ff828 + "*");
+              _0x36ca7e = JSON.parse(_0x36ca7e);
+              let _0x341385 = "";
+              let _0x181128 = "";
+              try {
+                _0x181128 = "|" + _0x36ca7e.subCode + "|";
+                _0x341385 = _0x36ca7e.subCodeMsg || _0x36ca7e.resultData.msg;
+              } catch (_0x2500eb) {}
+              if (_0x36ca7e.subCode && (_0x36ca7e.subCode == "A1" || _0x36ca7e.subCode == "0") || _0x341385 && _0x341385.indexOf("成功") > -1) {
+                lqSucArray[_0x3a643b].push(_0x30c81e);
+                yhqAPiHasSuccess[apiArray[_0x3a643b].qName][_0x4ff828] = getNowDate();
+              }
+              if (AllEendCode.indexOf(_0x181128) > -1) {
+                if (_0x36ca7e.subCode == "D2" && _0x341385.substr(_0x341385.indexOf("请") + 1, 2) == nextHour) {
+                  console.log(timeFormat() + ":时间未到继续：" + _0x341385);
+                } else {
+                  if (nextHour == 0) {
+                    console.log(timeFormat() + ":继续：" + _0x341385);
+                  } else {
+                    canTaskFlag[_0x3a643b] = false;
+                    console.log(timeFormat() + ":" + _0x341385);
+                  }
+                }
+              } else {
+                if (PEendCode.indexOf(_0x181128) > -1) {
+                  TgCkArray[_0x3a643b].push(_0x30c81e);
+                  console.log(timeFormat() + ":" + _0x341385 + ",subCode2_" + _0x181128);
+                } else {
+                  if (_0x36ca7e.code && _0x36ca7e.code == "3") {
+                    TgCkArray[_0x3a643b].push(_0x30c81e);
+                    console.log(timeFormat() + ":ck过期！");
+                    if (!checkHasCz(ckerror, _0x30c81e)) {
+                      ckerror.push(_0x30c81e);
+                      myNotice("【账号" + (_0x30c81e + 1) + "】" + _0x4ff828 + "——ck过期!");
+                      console.error("【账号" + (_0x30c81e + 1) + "】" + _0x4ff828 + "——ck过期!");
+                    }
+                  } else {
+                    console.log(timeFormat() + ":" + JSON.stringify(_0x36ca7e));
+                  }
+                }
+              }
+            }
+          } catch (_0x420932) {
+            TgCkArray[_0x3a643b].push(_0x30c81e);
+            $.logErr(_0x420932, _0x446eb4);
+          } finally {
+            _0x19db93(_0x36ca7e);
+          }
+        });
+      }
+    } else {
+      console.log("该券已无或已结束！");
+    }
+  });
+}
+function getJDTime() {
+  return new Promise(_0x370153 => {
+    $.post({
+      url: "https://api.m.jd.com/client.action?functionId=queryMaterialProducts&client=wh5"
+    }, async (_0x3df5fb, _0x276270, _0x28ce3a) => {
+      try {
+        if (_0x3df5fb) {
+          console.log("获取JD时间失败");
+        } else {
+          _0x28ce3a = JSON.parse(_0x28ce3a);
+          if (_0x28ce3a.code && _0x28ce3a.code == "0") {
+            JDTimes = parseInt(_0x28ce3a.currentTime2);
+            if (JDTimeJg == 0 || JDTimeJg != 0 && new Date().getTime() - JDTimes < JDTimeJg) {
+              JDTimeJg = new Date().getTime() - JDTimes;
+            }
+          } else {
+            console.log("获取JD时间失败:" + JSON.stringify(_0x28ce3a));
+          }
+        }
+      } catch (_0x31eba8) {
+        $.logErr(_0x31eba8, _0x276270);
+      } finally {
+        _0x370153(_0x28ce3a);
+      }
+    });
+  });
+}
+function checkYhq(_0x46412a, _0x5da540) {
+  if (!_0x46412a.endDate) {
+    return true;
+  }
+  if (_0x46412a.endDate && _0x46412a.qTime && new Date(_0x46412a.endDate + " 23:59:59").getTime() > new Date().getTime()) {
+    let _0x53bfe4 = _0x46412a.qTime.split(",");
+    if (_0x53bfe4.length > 0 && _0x53bfe4.includes(_0x5da540 + "")) {
+      return true;
+    }
+  }
+  return false;
+}
+function isRemoveYhqF(_0x34005b) {
+  let _0x2a7141 = false;
+  if (removeYhq && removeYhq.length > 0) {
+    for (var _0x964d20 in removeYhq) {
+      if (_0x34005b.qName == removeYhq[_0x964d20]) {
+        console.log("排除优惠券：" + _0x34005b.qName);
+        _0x2a7141 = true;
+        break;
+      }
+    }
+  }
+  return _0x2a7141;
+}
+async function getApiUrl(_0x160cb1, _0x4ce7a4) {
+  let _0x3c4ead = "";
+  if (apiArray[_0x160cb1].qApi.indexOf("atop_cart_black5_rushBuy") > -1) {
+    _0x3c4ead = await getDecryptUrlH5(apiArray[_0x160cb1].qApi);
+  } else {
+    _0x3c4ead = await getDecryptUrlTy(getApiLog(apiArray[_0x160cb1].qApi));
+  }
+  return {
+    url: _0x3c4ead,
+    headers: {
+      "user-agent": user_agent,
+      "content-Type": "application/x-www-form-urlencoded",
+      accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "zh-CN,zh;q=0.9",
+      "cache-control": "max-age=0",
+      origin: "https://pro.m.jd.com",
+      cookie: cookiesArr[_0x4ce7a4]
+    }
+  };
+}
+async function getApiUrlGet(_0x1512f7, _0x59aee0) {
+  if (apiArray[_0x1512f7].qApi.indexOf("https://s.m.jd.com") > -1 || apiArray[_0x1512f7].qApi.indexOf("h5_awake_wxapp") > -1) {
+    const _0x3dd4d4 = await getDecryptUrlTy(getApiLog(apiArray[_0x1512f7].qApi));
+    return {
+      url: _0x3dd4d4,
+      headers: {
+        "User-Agent": user_agent,
+        Cookie: cookiesArr[0],
+        Accept: "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        Referer: "https://coupon.m.jd.com/"
+      }
+    };
+  } else {
+    if (apiArray[_0x1512f7].qApi.indexOf("appid=plus_business") > -1) {
+      return {
+        url: apiArray[_0x1512f7].qApi,
+        headers: {
+          "User-Agent": user_agent,
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "zh-CN,zh;q=0.9",
+          Cookie: cookiesArr[_0x59aee0],
+          origin: "https://plus.m.jd.com"
+        }
+      };
+    } else {
+      return {
+        url: apiArray[_0x1512f7].qApi,
+        headers: {
+          "User-Agent": user_agent,
+          "accept-encoding": "gzip, deflate, br",
+          "accept-language": "zh-CN,zh;q=0.9",
+          Cookie: cookiesArr[_0x59aee0]
+        }
+      };
+    }
+  }
+}
+function jgNextHourF() {
+  let _0x195029 = timeFormat().substr(0, 13) + ":00:00";
+  let _0x2fd1c0 = Date.parse(new Date(_0x195029)) + 3600000;
+  return _0x2fd1c0 - new Date().getTime();
+}
+function myNotice(_0x4430c2) {}
+function nextHourF() {
+  let _0x4ec4c2 = new Date();
+  return _0x4ec4c2.getHours() + 1 >= 24 ? 0 : _0x4ec4c2.getHours() + 1;
+}
+function DateDiff(_0x573745, _0x49df5d) {
+  var _0x5aba2b;
+  var _0x3cfb69;
+  var _0xe68c8f;
+  var _0x418c2b;
+  _0x5aba2b = _0x573745.split("-");
+  _0x3cfb69 = new Date(_0x5aba2b[1] + "-" + _0x5aba2b[2] + "-" + _0x5aba2b[0]);
+  _0x5aba2b = _0x49df5d.split("-");
+  _0xe68c8f = new Date(_0x5aba2b[1] + "-" + _0x5aba2b[2] + "-" + _0x5aba2b[0]);
+  _0x418c2b = parseInt(Math.abs(_0x3cfb69 - _0xe68c8f) / 1000 / 60 / 60 / 24);
+  return _0x418c2b;
+}
+function getNowDate() {
+  let _0x4ad915 = new Date();
+  return _0x4ad915.getFullYear() + "-" + (_0x4ad915.getMonth() + 1 >= 10 ? _0x4ad915.getMonth() + 1 : "0" + (_0x4ad915.getMonth() + 1)) + "-" + (_0x4ad915.getDate() >= 10 ? _0x4ad915.getDate() : "0" + _0x4ad915.getDate());
+}
+function timeFormat(_0x1b3296, _0x7ec2e3) {
+  let _0xfcd031;
+  if (_0x1b3296) {
+    _0xfcd031 = new Date(_0x1b3296);
+  } else {
+    _0xfcd031 = new Date();
+  }
+  if (_0x7ec2e3 == "date") {
+    return _0xfcd031.getFullYear() + "-" + (_0xfcd031.getMonth() + 1 >= 10 ? _0xfcd031.getMonth() + 1 : "0" + (_0xfcd031.getMonth() + 1)) + "-" + (_0xfcd031.getDate() >= 10 ? _0xfcd031.getDate() : "0" + _0xfcd031.getDate());
+  }
+  return _0xfcd031.getFullYear() + "-" + (_0xfcd031.getMonth() + 1 >= 10 ? _0xfcd031.getMonth() + 1 : "0" + (_0xfcd031.getMonth() + 1)) + "-" + (_0xfcd031.getDate() >= 10 ? _0xfcd031.getDate() : "0" + _0xfcd031.getDate()) + " " + (_0xfcd031.getHours() >= 10 ? _0xfcd031.getHours() : "0" + _0xfcd031.getHours()) + ":" + (_0xfcd031.getMinutes() >= 10 ? _0xfcd031.getMinutes() : "0" + _0xfcd031.getMinutes()) + ":" + (_0xfcd031.getSeconds() >= 10 ? _0xfcd031.getSeconds() : "0" + _0xfcd031.getSeconds()) + ":" + _0xfcd031.getMilliseconds();
+}
+function getApiLog(_0x4fa2a0) {
+  let _0x1446e9 = smashUtils.getRandom(8);
+  let _0x2a5a30 = (smashUtils.get_risk_result({
+    id: "coupon",
+    data: {
+      random: _0x1446e9
+    }
+  }, xtTkSign) || {}).log;
+  let _0x32c738 = encodeURIComponent(",\"log\":\"" + _0x2a5a30 + "\",\"random\":\"" + _0x1446e9 + "\"");
+  if (_0x4fa2a0 && _0x4fa2a0.indexOf("%7D") > -1) {
+    _0x32c738 = _0x4fa2a0.substring(0, _0x4fa2a0.indexOf("%7D")) + _0x32c738 + _0x4fa2a0.substring(_0x4fa2a0.indexOf("%7D"), _0x4fa2a0.length);
+  }
+  return _0x32c738;
+}
+function checkHasCz(_0x37caff, _0x48334d) {
+  let _0xba7f5e = false;
+  if (_0x37caff) {
+    for (var _0x44449b in _0x37caff) {
+      if (_0x37caff[_0x44449b] == _0x48334d) {
+        _0xba7f5e = true;
+        break;
+      }
+    }
+  }
+  return _0xba7f5e;
+}
+function getUrlQueryParams(_0x135d36, _0x1364bc) {
+  let _0x124b73 = new RegExp("(^|&)" + _0x1364bc + "=([^&]*)(&|$)", "i");
+  let _0x56368d = _0x135d36.split("?")[1].substr(0).match(_0x124b73);
+  if (_0x56368d != null) {
+    return decodeURIComponent(_0x56368d[2]);
+  }
+  return "";
+}
+function sha256Hash(_0x55b482) {
+  const _0x2e85e7 = new TextEncoder();
+  const _0xbc66e1 = _0x2e85e7.encode(_0x55b482);
+  const _0xe02073 = $.CryptoJS.SHA256($.CryptoJS.enc.Utf8.parse(_0x55b482));
+  const _0x2e031b = _0xe02073.toString($.CryptoJS.enc.Hex);
+  return _0x2e031b;
+}
+function getDecryptUrlTy(_0x17d84b) {
+  return new Promise((_0x389534, _0x4fda64) => {
+    let _0x314df6 = sha256Hash(getUrlQueryParams(_0x17d84b, "body"));
+    let _0x4209ce = {
+      appid: "babelh5",
+      body: _0x314df6,
+      client: "wh5",
+      clientVersion: "1.0.0",
+      functionId: "newBabelAwardCollection"
+    };
+    paramsSignLiteMy.sign(_0x4209ce).then(_0x1870d7 => {
+      _0x389534(_0x17d84b + "&h5st=" + _0x1870d7.h5st);
+    }).catch(_0x2b7751 => {
+      console.error("签名失败:", _0x2b7751);
+      _0x389534(_0x17d84b);
+    });
+  });
+}
+function getDecryptUrlH5(_0x1a3054) {
+  _0x1a3054 += "&t=" + new Date().getTime();
+  return new Promise((_0x38182b, _0x45582b) => {
+    let _0x55bc24 = sha256Hash(getUrlQueryParams(_0x1a3054, "body"));
+    var _0x84543f = {
+      appid: getUrlQueryParams(_0x1a3054, "appid"),
+      body: _0x55bc24,
+      client: getUrlQueryParams(_0x1a3054, "client"),
+      functionId: getUrlQueryParams(_0x1a3054, "functionId"),
+      t: getUrlQueryParams(_0x1a3054, "t")
+    };
+    paramsSignLiteMy = new window.ParamsSignLite({
+      appId: "55709"
+    });
+    paramsSignLiteMy.sign(_0x84543f).then(_0x3abf0f => {
+      _0x38182b(_0x1a3054 + "&h5st=" + _0x3abf0f.h5st);
+    }).catch(_0x4b5ebe => {
+      console.error("签名失败:", _0x4b5ebe);
+      _0x38182b(_0x1a3054);
+    });
+  });
+}
+function getDecryptUrl(_0x2268d9) {
+  _0x2268d9 = _0x2268d9 + "&t=" + Date.now();
+  stk = getUrlQueryParams(_0x2268d9, "_stk");
+  if (stk) {
+    const _0x238c18 = format("yyyyMMddhhmmssSSS", Date.now());
+    const _0x5d7f04 = $.genKey($.token, $.fp.toString(), _0x238c18.toString(), $.appId.toString(), $.CryptoJS).toString($.CryptoJS.enc.Hex);
+    let _0x12d149 = "";
+    stk.split(",").map((_0x3f0b6d, _0x19ef39) => {
+      _0x12d149 += _0x3f0b6d + ":" + getUrlQueryParams(_0x2268d9, _0x3f0b6d) + (_0x19ef39 === stk.split(",").length - 1 ? "" : "&");
+    });
+    const _0x39d756 = $.CryptoJS.HmacSHA256(_0x12d149, _0x5d7f04.toString()).toString($.CryptoJS.enc.Hex);
+    return _0x2268d9 + "&h5st=" + encodeURIComponent(["".concat(_0x238c18.toString()), "".concat($.fp.toString()), "".concat($.appId.toString()), "".concat($.token), "".concat(_0x39d756), "3.0;".concat(_0x238c18)].join(";")) + "&__t=" + Date.now();
+  }
+}
+function format(_0x45148b, _0x12d7fc) {
+  if (!_0x45148b) {
+    _0x45148b = "yyyy-MM-dd";
+  }
+  var _0x2b3fb7;
+  if (!_0x12d7fc) {
+    _0x2b3fb7 = Date.now();
+  } else {
+    _0x2b3fb7 = new Date(_0x12d7fc);
+  }
+  var _0x2352fa = new Date(_0x2b3fb7);
+  var _0xbde90e = _0x45148b;
+  var _0x48d344 = {
+    "M+": _0x2352fa.getMonth() + 1,
+    "d+": _0x2352fa.getDate(),
+    "D+": _0x2352fa.getDate(),
+    "h+": _0x2352fa.getHours(),
+    "H+": _0x2352fa.getHours(),
+    "m+": _0x2352fa.getMinutes(),
+    "s+": _0x2352fa.getSeconds(),
+    "w+": _0x2352fa.getDay(),
+    "q+": Math.floor((_0x2352fa.getMonth() + 3) / 3),
+    "S+": _0x2352fa.getMilliseconds()
+  };
+  /(y+)/i.test(_0xbde90e) && (_0xbde90e = _0xbde90e.replace(RegExp.$1, "".concat(_0x2352fa.getFullYear()).substr(4 - RegExp.$1.length)));
+  Object.keys(_0x48d344).forEach(_0x45851f => {
+    if (new RegExp("(".concat(_0x45851f, ")")).test(_0xbde90e)) {
+      var _0x4b0ee7 = "S+" === _0x45851f ? "000" : "00";
+      _0xbde90e = _0xbde90e.replace(RegExp.$1, 1 == RegExp.$1.length ? _0x48d344[_0x45851f] : "".concat(_0x4b0ee7).concat(_0x48d344[_0x45851f]).substr("".concat(_0x48d344[_0x45851f]).length));
+    }
+  });
+  return _0xbde90e;
 }
